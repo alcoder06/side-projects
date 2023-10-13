@@ -1,0 +1,37 @@
+#nokia keypad project
+import string
+
+userInput="22 3 0 33 22 0 33 "
+reply=""
+
+letters=string.ascii_lowercase
+#print(letters)
+numbers = ["2","22","222","3","33","333","4","44","444",
+           "5","55","555","6","66","666","7","77","777","7777",
+           "8","88","888","9","99","999","9999"]
+NtoL=dict(zip(numbers,letters))
+#print(NtoL)
+nol=False
+let=""
+for e in userInput:
+    #print(":",e)
+    if nol==True:
+        nol=False
+        pass
+    elif e=="0":
+        #print(2)
+        reply += " "
+        nol=True
+    elif e!=" ":
+        #print(3)
+        let+=e
+        continue
+    else:
+        #print(1)
+        #print(let)
+        reply+=NtoL[let]
+        let=""
+print(reply)
+        
+
+        
