@@ -1,0 +1,20 @@
+#nokia keyboard project reverse
+import string
+reply=""
+userInput="bd ae e"
+letters=string.ascii_lowercase
+numbers = ["2","22","222","3","33","333","4","44","444",
+           "5","55","555","6","66","666","7","77","777","7777",
+           "8","88","888","9","99","999","9999"]
+
+NtoL=dict(zip(letters,numbers))
+
+for e in userInput:
+    if e!=" ":
+        reply+=NtoL[e]
+        reply+=" "
+        #print(e," ")
+    else:
+        reply+="0"
+        reply+=" "
+print(reply)
